@@ -14,7 +14,7 @@ The first version is focused on Magic: The Gathering. It is intended for players
 
 The approved mobile card page has four parts:
 
-1. **Card image and printing selector** — The page opens on a popular or recent printing. Users can swipe between printings or open a searchable **All Printings** selector.
+1. **Card image and printing selector** — The page opens on the user's last-selected printing or the printing that brought them to the page. Otherwise, it uses the most recent standard English tabletop printing or a designated representative printing. Users can swipe between printings or open a searchable **All Printings** selector.
 2. **Universal card information** — Details shared by every printing, including the card's name, rules text, mana cost, type line, and other gameplay information.
 3. **Selected-printing information** — Details tied to the printing currently on screen: set, release date, collector number, rarity, artist, finish, treatment, language, market price, and the time of the latest price update.
 4. **Discussion** — Two tabs keep general and printing-specific conversations together without mixing them up:
@@ -30,7 +30,7 @@ The planned MVP includes:
 - User accounts
 - A searchable MTG card database
 - A dedicated page for each card and its printings
-- Threaded posts and replies
+- Posts and replies
 - Voting to help useful contributions rise to the top
 - Topic labels and discussion filters
 - Reporting and basic moderation tools
@@ -41,18 +41,28 @@ The planned MVP includes:
 
 The first release is not intended to be a marketplace, deck builder, or full collection tracker. It will not include direct sales or payment processing, private trading, automated grading, AI-generated valuations, live auction data, or video feeds. Support for other trading card games may be considered later, but it is outside the initial scope.
 
+## Product documentation
+
+- [Product brief](product-brief.md)
+- [Mobile card page specification](card-page-specification.md)
+- [Product decisions](product-decisions.md)
+- [Development roadmap](development-roadmap.md)
+
 ## Project status
 
-The project is currently in product definition and prototyping. The initial product brief and canonical mobile card-page structure are approved. No application stack has been selected and no production code has been written.
+The initial product-definition stage is complete. The product brief, core product decisions, and canonical mobile card-page structure are approved. The project is ready to begin low-fidelity prototyping. No application stack has been selected and no production code has been written.
 
 The next step is a low-fidelity clickable prototype. That prototype will be tested with Magic players and collectors before technical design and development begin.
 
 ## Current roadmap
 
-1. Finalize the product definition and core decisions
-2. Build low-fidelity mobile wireframes
-3. Test the card-page concept with players and collectors
-4. Use that feedback to define the technical plan and MVP build
+1. Organize the product definition — **Complete**
+2. Create low-fidelity mobile wireframes — **Next**
+3. Test the concept with players and collectors
+4. Complete technical discovery
+5. Build the MVP
+6. Conduct private testing
+7. Begin a limited public release
 
 ---
 
