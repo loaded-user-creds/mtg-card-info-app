@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Low-fidelity mobile card-page prototype for the MTG Card Info App.">
+  <title>MTG Card Page Wireframe — Low-Fidelity Prototype</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: light-dark(#ffffff, #181818);
+      --foreground: light-dark(#1c1c1c, #f5f5f5);
+      --muted: light-dark(#eeeeee, #2c2c2c);
+      --muted-foreground: light-dark(#5d5d5d, #b8b8b8);
+      --primary: light-dark(#242424, #f0f0f0);
+      --primary-foreground: light-dark(#ffffff, #181818);
+      --accent: light-dark(#e3e3e3, #383838);
+      --accent-foreground: var(--foreground);
+      --border: light-dark(#b8b8b8, #595959);
+      --input: var(--border);
+      --ring: light-dark(#242424, #f0f0f0);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea,
+    summary {
+      color: inherit;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.375rem;
+      min-height: 2.5rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      background: var(--background);
+      color: var(--foreground);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--accent-foreground);
+    }
+
+    .btn-primary,
+    .btn[aria-selected="true"],
+    .btn[aria-pressed="true"] {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-ghost {
+      border-color: transparent;
+      background: transparent;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 500;
+    }
+
+    .form-control,
+    .form-select {
+      width: 100%;
+      min-height: 2.5rem;
+      padding: 0.5rem 0.625rem;
+      border: 1px solid var(--input);
+      border-radius: 0.5rem;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+    }
+
+    .viz-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .viz-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--muted);
+      color: var(--foreground);
+    }
+
+    .text-small {
+      font-size: 0.875rem;
+    }
+
+    .text-muted {
+      color: var(--muted-foreground);
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+
+    summary {
+      cursor: pointer;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Low-fidelity design prototype. Uses sample data and is not production application code. -->
+<div id="mtg-card-page-wireframe">
+  <style>
+    #mtg-card-page-wireframe {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      color: var(--foreground);
+    }
+
+    #mtg-card-page-wireframe * {
+      box-sizing: border-box;
+    }
+
+    #mtg-card-page-wireframe h2,
+    #mtg-card-page-wireframe h3,
+    #mtg-card-page-wireframe summary,
+    #mtg-card-page-wireframe strong {
+      font-weight: 500;
+    }
+
+    #mtg-card-page-wireframe .phone-frame {
+      width: min(100%, 430px);
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 1.75rem;
+      background: var(--background);
+    }
+
+    #mtg-card-page-wireframe .app-bar,
+    #mtg-card-page-wireframe .section-heading,
+    #mtg-card-page-wireframe .printing-nav,
+    #mtg-card-page-wireframe .scope-label,
+    #mtg-card-page-wireframe .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    #mtg-card-page-wireframe .app-bar h2,
+    #mtg-card-page-wireframe .section-heading h3,
+    #mtg-card-page-wireframe .post h3,
+    #mtg-card-page-wireframe p {
+      margin: 0;
+    }
+
+    #mtg-card-page-wireframe .card-stage {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      touch-action: pan-y;
+    }
+
+    #mtg-card-page-wireframe .card-image-placeholder {
+      width: min(68%, 260px);
+      aspect-ratio: 63 / 88;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: 0.75rem;
+      background: var(--muted);
+      color: var(--foreground);
+      text-align: center;
+    }
+
+    #mtg-card-page-wireframe .card-image-placeholder strong,
+    #mtg-card-page-wireframe .card-image-placeholder span {
+      display: block;
+    }
+
+    #mtg-card-page-wireframe .printing-summary {
+      width: 100%;
+      text-align: center;
+    }
+
+    #mtg-card-page-wireframe .printing-nav {
+      width: 100%;
+      justify-content: center;
+    }
+
+    #mtg-card-page-wireframe .panel,
+    #mtg-card-page-wireframe .post {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+    #mtg-card-page-wireframe .selector-list,
+    #mtg-card-page-wireframe .facts,
+    #mtg-card-page-wireframe .feed {
+      display: grid;
+      gap: 0.625rem;
+    }
+
+    #mtg-card-page-wireframe .facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #mtg-card-page-wireframe .fact {
+      min-width: 0;
+      padding-block: 0.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #mtg-card-page-wireframe .fact span,
+    #mtg-card-page-wireframe .fact strong {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+
+    #mtg-card-page-wireframe .scope-label {
+      justify-content: flex-start;
+    }
+
+    #mtg-card-page-wireframe .post-meta {
+      justify-content: flex-start;
+    }
+
+    #mtg-card-page-wireframe .empty-state {
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: 0.75rem;
+      text-align: center;
+      color: var(--muted-foreground);
+    }
+
+    #mtg-card-page-wireframe .prototype-notice {
+      margin: 0;
+      padding: 0.75rem;
+      border: 1px dashed var(--border);
+      border-radius: 0.75rem;
+      background: var(--muted);
+      color: var(--foreground);
+      text-align: center;
+    }
+
+    #mtg-card-page-wireframe [hidden] {
+      display: none;
+    }
+
+    @media (max-width: 380px) {
+      #mtg-card-page-wireframe .phone-frame {
+        padding: 0.75rem;
+        border-radius: 1rem;
+      }
+
+      #mtg-card-page-wireframe .facts {
+        grid-template-columns: 1fr;
+      }
+
+      #mtg-card-page-wireframe .card-image-placeholder {
+        width: 78%;
+      }
+    }
+  </style>
+
+  <main class="phone-frame" aria-label="Low-fidelity mobile card page prototype">
+    <p class="prototype-notice"><strong>Low-fidelity prototype</strong> · Sample data · Not production code</p>
+
+    <header class="app-bar">
+      <button type="button" class="btn btn-ghost" aria-label="Go back">
+        Back
+      </button>
+      <span class="viz-badge">Sample data</span>
+      <button type="button" class="btn btn-ghost" id="save-card" aria-pressed="false">
+        Save
+      </button>
+    </header>
+
+    <section class="card-stage" id="card-stage" aria-label="Selected printing; swipe left or right to change">
+      <div class="card-image-placeholder" aria-label="Card image placeholder">
+        <div>
+          <strong>LIGHTNING BOLT</strong>
+          <span id="image-printing-label">Magic 2010</span>
+          <span class="text-small">Card image</span>
+        </div>
+      </div>
+
+      <div class="printing-summary" aria-live="polite">
+        <strong id="printing-name">Magic 2010</strong>
+        <p class="text-small text-muted" id="printing-identity">M10 · #146 · Nonfoil</p>
+      </div>
+
+      <div class="printing-nav">
+        <button type="button" class="btn" id="previous-printing" aria-label="Previous printing">
+          Previous
+        </button>
+        <button type="button" class="btn btn-primary" id="toggle-printings" aria-expanded="false" aria-controls="printing-selector">
+          All Printings
+        </button>
+        <button type="button" class="btn" id="next-printing" aria-label="Next printing">
+          Next
+        </button>
+      </div>
+    </section>
+
+    <section class="panel" id="printing-selector" aria-label="All Printings selector" hidden>
+      <div class="section-heading">
+        <h3>All Printings</h3>
+        <button type="button" class="btn btn-ghost" id="close-printings">Close</button>
+      </div>
+      <label class="form-label" for="printing-search">Search sets or collector numbers</label>
+      <input class="form-control" id="printing-search" type="search" placeholder="Try Revised or 161">
+      <div class="selector-list" id="printing-options" aria-live="polite"></div>
+      <p class="empty-state" id="printing-empty" hidden>No matching printings.</p>
+    </section>
+
+    <details class="panel" open>
+      <summary><strong>Universal card information</strong></summary>
+      <div class="facts">
+        <div class="fact"><span class="text-small text-muted">Mana cost</span><strong>{R}</strong></div>
+        <div class="fact"><span class="text-small text-muted">Type</span><strong>Instant</strong></div>
+        <div class="fact"><span class="text-small text-muted">Oracle text</span><strong>Deals 3 damage to any target.</strong></div>
+        <div class="fact"><span class="text-small text-muted">Color identity</span><strong>Red</strong></div>
+      </div>
+      <button type="button" class="btn">Rulings and legality</button>
+    </details>
+
+    <details class="panel" open>
+      <summary><strong>Selected-printing information</strong></summary>
+      <div class="facts" id="printing-facts" aria-live="polite"></div>
+    </details>
+
+    <section class="panel" aria-label="Card discussion">
+      <div class="section-heading">
+        <h3>Discussion</h3>
+        <button type="button" class="btn btn-primary" id="new-post">New post</button>
+      </div>
+
+      <div class="viz-controls" role="tablist" aria-label="Discussion scope">
+        <button type="button" class="btn" id="all-printings-tab" role="tab" aria-selected="true" aria-controls="discussion-feed">All Printings</button>
+        <button type="button" class="btn" id="this-printing-tab" role="tab" aria-selected="false" aria-controls="discussion-feed">This Printing</button>
+      </div>
+
+      <div class="scope-label" id="discussion-scope" aria-live="polite">
+        <span class="viz-badge">All Printings</span>
+        <span class="text-small text-muted">Lightning Bolt</span>
+      </div>
+
+      <label class="form-label" for="topic-filter">Topic</label>
+      <select class="form-select" id="topic-filter"></select>
+
+      <div class="feed" id="discussion-feed" role="tabpanel" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="post-composer" aria-label="New post" hidden>
+      <div class="section-heading">
+        <h3>Create post</h3>
+        <button type="button" class="btn btn-ghost" id="close-composer">Cancel</button>
+      </div>
+      <p class="text-small text-muted" id="composer-scope">Scope: All Printings · Lightning Bolt</p>
+      <label class="form-label" for="post-title">Title</label>
+      <input class="form-control" id="post-title" type="text" placeholder="What would you like to discuss?">
+      <label class="form-label" for="post-body">Details</label>
+      <textarea class="form-control" id="post-body" rows="3" placeholder="Add context for other players and collectors"></textarea>
+      <button type="button" class="btn btn-primary">Preview post</button>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const root = document.getElementById("mtg-card-page-wireframe");
+      const printings = [
+        {
+          name: "Magic 2010",
+          code: "M10",
+          collector: "146",
+          release: "Jul 17, 2009",
+          rarity: "Common",
+          artist: "Christopher Moeller",
+          finish: "Nonfoil",
+          treatment: "Standard frame",
+          language: "English",
+          market: "$2.18 · sample"
+        },
+        {
+          name: "Revised Edition",
+          code: "3ED",
+          collector: "161",
+          release: "Apr 1, 1994",
+          rarity: "Common",
+          artist: "Christopher Rush",
+          finish: "Nonfoil",
+          treatment: "White border",
+          language: "English",
+          market: "$4.72 · sample"
+        },
+        {
+          name: "Double Masters 2022",
+          code: "2X2",
+          collector: "117",
+          release: "Jul 8, 2022",
+          rarity: "Uncommon",
+          artist: "Sample artist",
+          finish: "Foil",
+          treatment: "Standard frame",
+          language: "English",
+          market: "$3.05 · sample"
+        }
+      ];
+
+      const posts = {
+        all: [
+          { category: "Rules & interactions", title: "Can damage be redirected after choosing a target?", meta: "12 replies · 28 useful votes" },
+          { category: "Deckbuilding", title: "When is four copies too many?", meta: "8 replies · 17 useful votes" },
+          { category: "Card history & artwork", title: "A quick guide to the major art versions", meta: "5 replies · 22 useful votes" }
+        ],
+        printing: [
+          { category: "Condition & grading", title: "How much edge whitening is typical for this release?", meta: "6 replies · 14 useful votes" },
+          { category: "Identification & counterfeits", title: "Print-pattern details to check under magnification", meta: "9 replies · 31 useful votes" },
+          { category: "Print quality & defects", title: "Known color variation in this set", meta: "3 replies · 11 useful votes" }
+        ]
+      };
+
+      const topicOptions = {
+        all: ["All topics", "Rules & interactions", "Deckbuilding", "Card history & artwork"],
+        printing: ["All topics", "Condition & grading", "Identification & counterfeits", "Print quality & defects"]
+      };
+
+      let currentPrinting = 0;
+      let discussionMode = "all";
+      let pointerStartX = null;
+
+      const printingName = root.querySelector("#printing-name");
+      const printingIdentity = root.querySelector("#printing-identity");
+      const imagePrintingLabel = root.querySelector("#image-printing-label");
+      const printingFacts = root.querySelector("#printing-facts");
+      const selector = root.querySelector("#printing-selector");
+      const selectorToggle = root.querySelector("#toggle-printings");
+      const printingOptions = root.querySelector("#printing-options");
+      const printingSearch = root.querySelector("#printing-search");
+      const printingEmpty = root.querySelector("#printing-empty");
+      const allTab = root.querySelector("#all-printings-tab");
+      const printingTab = root.querySelector("#this-printing-tab");
+      const discussionScope = root.querySelector("#discussion-scope");
+      const topicFilter = root.querySelector("#topic-filter");
+      const discussionFeed = root.querySelector("#discussion-feed");
+      const composer = root.querySelector("#post-composer");
+      const composerScope = root.querySelector("#composer-scope");
+
+      function fact(label, value) {
+        const item = document.createElement("div");
+        item.className = "fact";
+        const name = document.createElement("span");
+        name.className = "text-small text-muted";
+        name.textContent = label;
+        const detail = document.createElement("strong");
+        detail.textContent = value;
+        item.append(name, detail);
+        return item;
+      }
+
+      function renderPrinting() {
+        const printing = printings[currentPrinting];
+        printingName.textContent = printing.name;
+        printingIdentity.textContent = `${printing.code} · #${printing.collector} · ${printing.finish}`;
+        imagePrintingLabel.textContent = printing.name;
+        printingFacts.replaceChildren(
+          fact("Set", `${printing.name} (${printing.code})`),
+          fact("Released", printing.release),
+          fact("Collector number", printing.collector),
+          fact("Rarity", printing.rarity),
+          fact("Artist", printing.artist),
+          fact("Finish", printing.finish),
+          fact("Treatment", printing.treatment),
+          fact("Language", printing.language),
+          fact("Market information", printing.market),
+          fact("Last updated", "Prototype only")
+        );
+
+        Array.from(printingOptions.querySelectorAll("button")).forEach((button, index) => {
+          button.setAttribute("aria-pressed", String(index === currentPrinting));
+        });
+
+        if (discussionMode === "printing") {
+          renderDiscussion();
+        }
+      }
+
+      function selectPrinting(index) {
+        currentPrinting = (index + printings.length) % printings.length;
+        renderPrinting();
+      }
+
+      function renderPrintingOptions(query = "") {
+        const normalized = query.trim().toLowerCase();
+        printingOptions.replaceChildren();
+        let matches = 0;
+
+        printings.forEach((printing, index) => {
+          const haystack = `${printing.name} ${printing.code} ${printing.collector} ${printing.finish}`.toLowerCase();
+          if (normalized && !haystack.includes(normalized)) return;
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "btn";
+          button.setAttribute("aria-pressed", String(index === currentPrinting));
+          button.textContent = `${printing.name} · ${printing.code} #${printing.collector} · ${printing.finish}`;
+          button.addEventListener("click", () => {
+            selectPrinting(index);
+            selector.hidden = true;
+            selectorToggle.setAttribute("aria-expanded", "false");
+          });
+          printingOptions.append(button);
+          matches += 1;
+        });
+
+        printingEmpty.hidden = matches !== 0;
+      }
+
+      function renderTopicOptions() {
+        topicFilter.replaceChildren();
+        topicOptions[discussionMode].forEach((topic) => {
+          const option = document.createElement("option");
+          option.value = topic;
+          option.textContent = topic;
+          topicFilter.append(option);
+        });
+      }
+
+      function renderDiscussion() {
+        const printing = printings[currentPrinting];
+        allTab.setAttribute("aria-selected", String(discussionMode === "all"));
+        printingTab.setAttribute("aria-selected", String(discussionMode === "printing"));
+
+        const badge = document.createElement("span");
+        badge.className = "viz-badge";
+        badge.textContent = discussionMode === "all" ? "All Printings" : "This Printing";
+        const detail = document.createElement("span");
+        detail.className = "text-small text-muted";
+        detail.textContent = discussionMode === "all"
+          ? "Lightning Bolt"
+          : `${printing.name} · #${printing.collector} · ${printing.finish}`;
+        discussionScope.replaceChildren(badge, detail);
+
+        renderTopicOptions();
+        renderPosts();
+        composerScope.textContent = discussionMode === "all"
+          ? "Scope: All Printings · Lightning Bolt"
+          : `Scope: This Printing · ${printing.name} · #${printing.collector} · ${printing.finish}`;
+      }
+
+      function renderPosts() {
+        const selectedTopic = topicFilter.value || "All topics";
+        const visible = posts[discussionMode].filter((post) => selectedTopic === "All topics" || post.category === selectedTopic);
+        discussionFeed.replaceChildren();
+
+        if (visible.length === 0) {
+          const empty = document.createElement("p");
+          empty.className = "empty-state";
+          empty.textContent = "No posts in this topic yet.";
+          discussionFeed.append(empty);
+          return;
+        }
+
+        visible.forEach((post) => {
+          const article = document.createElement("article");
+          article.className = "post";
+          const meta = document.createElement("div");
+          meta.className = "post-meta";
+          const category = document.createElement("span");
+          category.className = "viz-badge";
+          category.textContent = post.category;
+          const activity = document.createElement("span");
+          activity.className = "text-small text-muted";
+          activity.textContent = post.meta;
+          const title = document.createElement("h3");
+          title.textContent = post.title;
+          const open = document.createElement("button");
+          open.type = "button";
+          open.className = "btn";
+          open.textContent = "Open discussion";
+          meta.append(category, activity);
+          article.append(meta, title, open);
+          discussionFeed.append(article);
+        });
+      }
+
+      root.querySelector("#previous-printing").addEventListener("click", () => selectPrinting(currentPrinting - 1));
+      root.querySelector("#next-printing").addEventListener("click", () => selectPrinting(currentPrinting + 1));
+
+      selectorToggle.addEventListener("click", () => {
+        selector.hidden = !selector.hidden;
+        selectorToggle.setAttribute("aria-expanded", String(!selector.hidden));
+        if (!selector.hidden) printingSearch.focus();
+      });
+
+      root.querySelector("#close-printings").addEventListener("click", () => {
+        selector.hidden = true;
+        selectorToggle.setAttribute("aria-expanded", "false");
+        selectorToggle.focus();
+      });
+
+      printingSearch.addEventListener("input", () => renderPrintingOptions(printingSearch.value));
+
+      allTab.addEventListener("click", () => {
+        discussionMode = "all";
+        renderDiscussion();
+      });
+
+      printingTab.addEventListener("click", () => {
+        discussionMode = "printing";
+        renderDiscussion();
+      });
+
+      topicFilter.addEventListener("change", renderPosts);
+
+      root.querySelector("#save-card").addEventListener("click", (event) => {
+        const button = event.currentTarget;
+        const isSaved = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", String(!isSaved));
+        button.lastChild.textContent = isSaved ? " Save" : " Saved";
+      });
+
+      root.querySelector("#new-post").addEventListener("click", () => {
+        composer.hidden = false;
+        composerScope.textContent = discussionMode === "all"
+          ? "Scope: All Printings · Lightning Bolt"
+          : `Scope: This Printing · ${printings[currentPrinting].name} · #${printings[currentPrinting].collector} · ${printings[currentPrinting].finish}`;
+        root.querySelector("#post-title").focus();
+      });
+
+      root.querySelector("#close-composer").addEventListener("click", () => {
+        composer.hidden = true;
+        root.querySelector("#new-post").focus();
+      });
+
+      const cardStage = root.querySelector("#card-stage");
+      cardStage.addEventListener("pointerdown", (event) => {
+        pointerStartX = event.clientX;
+      });
+      cardStage.addEventListener("pointerup", (event) => {
+        if (pointerStartX === null) return;
+        const distance = event.clientX - pointerStartX;
+        pointerStartX = null;
+        if (Math.abs(distance) < 45) return;
+        selectPrinting(currentPrinting + (distance < 0 ? 1 : -1));
+      });
+      cardStage.addEventListener("pointercancel", () => {
+        pointerStartX = null;
+      });
+
+      renderPrintingOptions();
+      renderPrinting();
+      renderDiscussion();
+    })();
+  </script>
+</div>
+
+</body>
+</html>
