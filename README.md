@@ -1,74 +1,152 @@
-MTG Card Info App
 
-A mobile-first reference and discussion app for Magic: The Gathering cards.
+Open loaded-user-creds/mtg-card-info-app, review all files on main, and improve README.md to match the product documentation. Make the change on a separate branch and open a draft pull request.
 
-The basic idea is simple: every card should have a useful home of its own. A user can look up a card, move between its different printings, review the information tied to the card or a specific printing, and join discussions without digging through unrelated forum threads.
+Worked for 8m 26s
+The README improvement is complete locally, but GitHub blocked publication because the connected integration lacks repository write access.
 
-This project is still in the planning and prototyping stage. No application code has been selected or written yet.
+Ready to publish:
 
-What makes it different
+Reviewed every file on main—currently only README.md
 
-Most card apps are built around deck construction, collection tracking, pricing, or buying and selling. Those are useful tools, but they do not organize collector and player knowledge very well.
+Removed the duplicated content
 
-This app is centered on two related discussion levels:
+Added proper Markdown structure
 
-All printings: gameplay, rules, deckbuilding, card history, artwork, and other topics that apply to the card generally.
+Aligned the README with the approved product scope, card-page design, MVP, exclusions, status, and roadmap
 
-This printing: pricing, condition, grading, identification, counterfeit concerns, print quality, and details that apply to one specific release.
+Created branch agent/improve-readme
 
-Current documents
+Created commit d9c76a8
 
-Product brief
+Passed git diff --check
 
-Card page specification
+README.md
 
-Product decisions
+GitHub returned 403: Resource not accessible by integration when creating the remote branch. Please reauthorize the GitHub connection with Contents: Read and write access to loaded-user-creds/mtg-card-info-app, then tell me to continue. Don’t send an access token in chat. main remains unchanged.
 
-Development roadmap
 
-Current status
 
-The first product brief and the mobile card-page structure have been approved. The next major step is a low-fidelity clickable prototype that can be shown to real Magic players and collectors before development begins.
+README.md
 
-Working scope
 
-The first version is intended for Magic: The Gathering only. It is not currently planned as a marketplace, deck builder, full collection tracker, or trading platform.
+# MTG Card Info App
+
+A mobile-first reference and discussion app where every Magic: The Gathering card has a useful home of its own.
+
+## The idea
+
+Card-specific knowledge is scattered across Reddit, Discord, YouTube, marketplaces, deck apps, forums, and social media. Useful conversations are hard to find later, and most card apps are built around deck construction, collection tracking, pricing, or buying and selling.
+
+This project takes a different approach: the card page is the center of the experience. A user can search for a card, move between its printings, review information about the card or a particular release, and join a discussion without digging through unrelated threads.
+
+The first version is focused on Magic: The Gathering. It is intended for players, collectors, buyers, sellers, and other experienced users who want more than rules text or a current price.
+
+## How the card page works
+
+The approved mobile card page has four parts:
+
+1. **Card image and printing selector** — The page opens on a popular or recent printing. Users can swipe between printings or open a searchable **All Printings** selector.
+2. **Universal card information** — Details shared by every printing, including the card's name, rules text, mana cost, type line, and other gameplay information.
+3. **Selected-printing information** — Details tied to the printing currently on screen: set, release date, collector number, rarity, artist, finish, treatment, language, market price, and the time of the latest price update.
+4. **Discussion** — Two tabs keep general and printing-specific conversations together without mixing them up:
+   - **All Printings** covers gameplay, rules, deckbuilding, card history, artwork, and other topics that apply to the card as a whole.
+   - **This Printing** covers price, condition, grading, identification, counterfeit concerns, print quality, and other details unique to a particular release.
+
+Printing-specific topics will use categories and filters inside **This Printing**, not a collection of separate subforums.
+
+## First-release scope
+
+The planned MVP includes:
+
+- User accounts
+- A searchable MTG card database
+- A dedicated page for each card and its printings
+- Threaded posts and replies
+- Voting to help useful contributions rise to the top
+- Topic labels and discussion filters
+- Reporting and basic moderation tools
+- Saved cards and followed discussions
+- Notifications
+
+## What it is not
+
+The first release is not intended to be a marketplace, deck builder, or full collection tracker. It will not include direct sales or payment processing, private trading, automated grading, AI-generated valuations, live auction data, or video feeds. Support for other trading card games may be considered later, but it is outside the initial scope.
+
+## Project status
+
+The project is currently in product definition and prototyping. The initial product brief and canonical mobile card-page structure are approved. No application stack has been selected and no production code has been written.
+
+The next step is a low-fidelity clickable prototype. That prototype will be tested with Magic players and collectors before technical design and development begin.
+
+## Current roadmap
+
+1. Finalize the product definition and core decisions
+2. Build low-fidelity mobile wireframes
+3. Test the card-page concept with players and collectors
+4. Use that feedback to define the technical plan and MVP build
+
 ---
 
-Magic: The Gathering is a trademark of Wizards of the Coast. This is an independent project and is not affiliated with or endorsed by Wizards of the Coast.MTG Card Info App
+Magic: The Gathering is a trademark of Wizards of the Coast. This is an independent project and is not affiliated with or endorsed by Wizards of the Coast.
+README.md
 
-A mobile-first reference and discussion app for Magic: The Gathering cards.
 
-The basic idea is simple: every card should have a useful home of its own. A user can look up a card, move between its different printings, review the information tied to the card or a specific printing, and join discussions without digging through unrelated forum threads.
+# MTG Card Info App
 
-This project is still in the planning and prototyping stage. No application code has been selected or written yet.
+A mobile-first reference and discussion app where every Magic: The Gathering card has a useful home of its own.
 
-What makes it different
+## The idea
 
-Most card apps are built around deck construction, collection tracking, pricing, or buying and selling. Those are useful tools, but they do not organize collector and player knowledge very well.
+Card-specific knowledge is scattered across Reddit, Discord, YouTube, marketplaces, deck apps, forums, and social media. Useful conversations are hard to find later, and most card apps are built around deck construction, collection tracking, pricing, or buying and selling.
 
-This app is centered on two related discussion levels:
+This project takes a different approach: the card page is the center of the experience. A user can search for a card, move between its printings, review information about the card or a particular release, and join a discussion without digging through unrelated threads.
 
-All printings: gameplay, rules, deckbuilding, card history, artwork, and other topics that apply to the card generally.
+The first version is focused on Magic: The Gathering. It is intended for players, collectors, buyers, sellers, and other experienced users who want more than rules text or a current price.
 
-This printing: pricing, condition, grading, identification, counterfeit concerns, print quality, and details that apply to one specific release.
+## How the card page works
 
-Current documents
+The approved mobile card page has four parts:
 
-Product brief
+1. **Card image and printing selector** — The page opens on a popular or recent printing. Users can swipe between printings or open a searchable **All Printings** selector.
+2. **Universal card information** — Details shared by every printing, including the card's name, rules text, mana cost, type line, and other gameplay information.
+3. **Selected-printing information** — Details tied to the printing currently on screen: set, release date, collector number, rarity, artist, finish, treatment, language, market price, and the time of the latest price update.
+4. **Discussion** — Two tabs keep general and printing-specific conversations together without mixing them up:
+   - **All Printings** covers gameplay, rules, deckbuilding, card history, artwork, and other topics that apply to the card as a whole.
+   - **This Printing** covers price, condition, grading, identification, counterfeit concerns, print quality, and other details unique to a particular release.
 
-Card page specification
+Printing-specific topics will use categories and filters inside **This Printing**, not a collection of separate subforums.
 
-Product decisions
+## First-release scope
 
-Development roadmap
+The planned MVP includes:
 
-Current status
+- User accounts
+- A searchable MTG card database
+- A dedicated page for each card and its printings
+- Threaded posts and replies
+- Voting to help useful contributions rise to the top
+- Topic labels and discussion filters
+- Reporting and basic moderation tools
+- Saved cards and followed discussions
+- Notifications
 
-The first product brief and the mobile card-page structure have been approved. The next major step is a low-fidelity clickable prototype that can be shown to real Magic players and collectors before development begins.
+## What it is not
 
-Working scope
+The first release is not intended to be a marketplace, deck builder, or full collection tracker. It will not include direct sales or payment processing, private trading, automated grading, AI-generated valuations, live auction data, or video feeds. Support for other trading card games may be considered later, but it is outside the initial scope.
 
-The first version is intended for Magic: The Gathering only. It is not currently planned as a marketplace, deck builder, full collection tracker, or trading platform.
+## Project status
+
+The project is currently in product definition and prototyping. The initial product brief and canonical mobile card-page structure are approved. No application stack has been selected and no production code has been written.
+
+The next step is a low-fidelity clickable prototype. That prototype will be tested with Magic players and collectors before technical design and development begin.
+
+## Current roadmap
+
+1. Finalize the product definition and core decisions
+2. Build low-fidelity mobile wireframes
+3. Test the card-page concept with players and collectors
+4. Use that feedback to define the technical plan and MVP build
+
 ---
+
 Magic: The Gathering is a trademark of Wizards of the Coast. This is an independent project and is not affiliated with or endorsed by Wizards of the Coast.
