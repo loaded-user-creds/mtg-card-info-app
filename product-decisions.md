@@ -20,7 +20,7 @@ The app should be best at persistent, searchable, card-specific knowledge and co
 
 ## 3. Treat the card and its printings as separate objects
 
-**Decision:** General card information and discussion will be separated from printing-specific information and discussion.
+**Decision:** Universal card information and all-printings discussion will be separated from printing-specific information and discussion.
 
 **Reason:** Rules, gameplay, and deckbuilding usually apply to the card as a whole. Price, condition, print defects, grading, and counterfeit concerns often apply to one release.
 
@@ -34,7 +34,7 @@ This distinction is the core of the product.
 
 ## 5. Use a predictable default printing
 
-**Decision:** The app will prefer the user's last selection or the printing that led them to the page. Otherwise, it will normally show the most recent standard English tabletop printing or a chosen representative printing.
+**Decision:** The app will prefer the user's last-selected printing or the printing that led them to the page. Otherwise, it will show the most recent standard English tabletop printing or a designated representative printing.
 
 **Reason:** “Most popular” is difficult to define consistently. A predictable rule is easier for users to understand and easier to implement.
 
