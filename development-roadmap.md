@@ -4,7 +4,7 @@ This roadmap is intentionally practical. The project should earn its way from on
 
 ## Stage 1: Organize the product definition
 
-**Status:** In progress
+**Status:** Complete
 
 Goals:
 
@@ -19,6 +19,8 @@ Exit point:
 - The product purpose, initial audience, MVP, and non-goals are clear
 
 ## Stage 2: Create low-fidelity wireframes
+
+**Status:** Next
 
 Goals:
 
