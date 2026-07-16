@@ -7,7 +7,7 @@ The card page is the center of the application. It should feel familiar to anyon
 The approved mobile layout is:
 
 1. Card image and printing selector
-2. General card information
+2. Universal card information
 3. Selected-printing information
 4. Discussion
    - All Printings
@@ -45,12 +45,12 @@ The app should use the following order when deciding which printing to show:
 
 1. The printing the user previously selected
 2. The printing opened from search, a notification, or an external link
-3. The most recent normal English tabletop printing
+3. The most recent standard English tabletop printing
 4. A designated representative printing
 
 A promotional or unusual treatment should not become the default simply because it is the newest version.
 
-## 2. General card information
+## 2. Universal card information
 
 This section contains information that belongs to the card across printings.
 
@@ -92,7 +92,7 @@ It may include:
 - Promotional status
 - Available market information and its last-updated date
 
-This information should remain separate from the general card information. That separation is important to both the interface and the underlying data model.
+This information should remain separate from the universal card information. That separation is important to both the interface and the underlying data model.
 
 ## 4. Discussion
 
